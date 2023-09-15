@@ -1,27 +1,37 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const cors = require('cors');
-
-const userRoutes = require('./routes/userRoutes');
-const contactUsRoutes = require('./routes/contactUsRoutes');
-
-dotenv.config();
-const app = express();
-
-app.use(cors());
-app.use(express.json());
-
-app.use('/api/auth', userRoutes);
-app.use('/api/user', contactUsRoutes);
-
-const mongoURI = "mongodb://localhost:27017/india_tourism_app?readPreference=primary&appname=MongoDB%20Compass&ssl=false";
-
-mongoose.connect(mongoURI, () => {
-    console.log("Connected to mongoDB");
-})
-
-let port = 5000 // process.env.PORT;
-const server = app.listen(port || 5000, () => {
-    console.log(`Server is started on Port ${port}`);
-});
+import MaharashtraData from "./MaharashtraData";
+import MadhyaPradeshData from "./MadhyaPradeshData";
+import KeralaData from "./KeralaData";
+import KarnatakaData from "./KarnatakaData";
+import JharKhandData from "./JharkhandData";
+import HimachalPradeshData from "./HimachalPradeshData";
+import HaryanaData from "./HaryanaData";
+import GujaratData from "./GujaratData";
+import GoaData from "./GoaData";
+import AndhraPradeshData from "./AndhraPradeshData";
+import ArunachalPradeshData from "./ArunachalPradeshData.js";
+import AssamData from "./AssamData.js";
+import BiharData from "./BiharData.js";
+import SikkimData from "./SikkimData.js";
+import TamilNaduData from "./TamilNaduData.js";
+import TelanganaData from "./TelanganaData.js";
+import TripuraData from "./TripuraData.js";
+import UttarakhandData from "./UttarakhandData.js";
+import WestBengalData from "./WestBengalData.js";
+import UttarPradeshData from "./UttarPradeshData";
+import RajastanData from "./RajastanData";
+import PunjabData from "./PunjabData";
+import MeghalayaData from "./MeghalayaData";
+import MizoramData from "./MizoramData";
+import NagalandData from "./NagalandData";
+import OdishaData from "./OdishaData";
+import ManipuraData from "./ManipuraData";
+import AndamanNicobarData from "./AndamanNicobarData";
+import ChhattisgarhData from "./ChhattisgarhData.js";
+import DadraData from "./DadraData";
+import DelhiData from "./DelhiData";
+import JammuKashmirData from "./JammuKashmirData";
+import LadakhData from "./LadakhData";
+import LakshadweepData from "./LakshadweepData";
+import PondicherryData from "./PondicherryData";
+import ChandigarhData from "./ChandigarhData";
+export { MaharashtraData, GujaratData,GoaData,AndhraPradeshData,UttarPradeshData,MadhyaPradeshData, KarnatakaData, KeralaData, JammuKashmirData, JharKhandData, HaryanaData, HimachalPradeshData ,ArunachalPradeshData,AssamData,BiharData,ChhattisgarhData,SikkimData,TamilNaduData,TelanganaData,TripuraData,UttarakhandData,WestBengalData,RajastanData,PunjabData,OdishaData,NagalandData,MizoramData,MeghalayaData,ManipuraData,AndamanNicobarData,ChandigarhData,DadraData,DelhiData,LadakhData,LakshadweepData,PondicherryData};
